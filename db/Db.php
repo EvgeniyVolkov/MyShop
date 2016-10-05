@@ -7,10 +7,12 @@ class Db
 {
     protected static $instance = null;
 
+    /**
+     * @return PDO
+     */
     public static function getConnection()
     {
         if (self::$instance === null) {
-            echo 'Новое соединение';
             $dsn = 'mysql:host=' . HOST . ';dbname=' . DB_NAME . ';charset=' . CHARSET;
             $opt = array(
                 PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,

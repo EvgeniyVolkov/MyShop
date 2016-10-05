@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html>
-    <?php require_once 'head.php'; ?>
-<body>
 
-<div class="flex-container">
-    <?php require_once 'header.php'; ?>
-    <?php require_once 'menu.php'; ?>
-    <?php require_once 'content.php'; ?>
-    <?php require_once 'footer.php'; ?>
-</div>
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-</body>
-</html>
+require_once 'bootstrap.php';
+?>
