@@ -2,7 +2,7 @@
 require_once 'db/Db.php';
 $connection = Db::getConnection();
 
-$sql = "SELECT * FROM category";
+$sql = "SELECT * FROM `category`";
 $rows = $connection->query($sql)->fetchAll();
 ?>
 

@@ -1,15 +1,16 @@
 <?php
 require_once 'db/Db.php';
-$connection = Db::getConnection();
-$sql = "SELECT title FROM products";
+//$connection = Db::getConnection();
+
+$sql = "SELECT `title` FROM `product`";
 $rows = $connection->query($sql)->fetchAll();
 ?>
 
 <article class="article">
-    <h1>London</h1>
+    <h1>Хиты продаж:</h1>
     <p>
     <?php foreach ($rows as $product): ?>
-        <li><a href="#"><?= $product['title'] ?></a></li>
+        <a href="#"><?= $product['title'] ?></a><br />
     <?php endforeach; ?>
     </p>
 </article>
