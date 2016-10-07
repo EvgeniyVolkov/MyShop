@@ -1,1 +1,1 @@
-<h1>Index action view</h1>
+<h1>Index action page</h1>
