@@ -1,0 +1,1 @@
+<h1>All action view</h1>
