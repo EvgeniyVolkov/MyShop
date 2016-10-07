@@ -10,6 +10,6 @@ class CategoryController extends BaseController
 
     public function showAction()
     {
-        include 'views/category/show.php';
+        $this->render('category/show');
     }
 }
