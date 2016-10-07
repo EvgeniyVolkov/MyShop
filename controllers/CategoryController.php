@@ -5,7 +5,21 @@ class CategoryController extends BaseController
 {
     public function allAction()
     {
-        $this->render('category/all');
+        $categories = array(
+            'Category 1',
+            'Category 2',
+            'Category 3',
+            'Category 4'
+        );
+        $this->render(
+            'category/all',
+            array(
+                'categories' => $categories,
+                'variable' => 'Helllo!',
+                'name' => 'Evgeniy',
+                'lastname' => 'Volkov'
+            )
+        );
     }
 
     public function showAction()
