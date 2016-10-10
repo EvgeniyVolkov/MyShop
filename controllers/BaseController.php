@@ -4,7 +4,7 @@ class BaseController
 {
     const MAIN_TEMPLATE = 'main.php';
 
-    public function render($viewName, $data)
+    public function render($viewName, $data = array())
     {
 //        before
 //        array(

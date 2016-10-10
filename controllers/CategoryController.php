@@ -1,23 +1,17 @@
 <?php
 require_once 'BaseController.php';
+require_once 'models/Category.php';
 
 class CategoryController extends BaseController
 {
     public function allAction()
     {
-        $categories = array(
-            'Category 1',
-            'Category 2',
-            'Category 3',
-            'Category 4'
-        );
+        $categoryModel = new Category();
+
         $this->render(
             'category/all',
             array(
-                'categories' => $categories,
-                'variable' => 'Helllo!',
-                'name' => 'Evgeniy',
-                'lastname' => 'Volkov'
+                'categories' => $categoryModel->getCategories(),
             )
         );
     }
