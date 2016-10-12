@@ -6,9 +6,9 @@ use shop\db\Db;
 
 class Product
 {
-    public function getProducts($limitNum)
+    public function getProducts()
     {
-        $sql = "SELECT id, title FROM product LIMIT {$limitNum}";
+        $sql = "SELECT id, title FROM product";
         return Db::getConnection()->query($sql)->fetchAll();
     }
 }

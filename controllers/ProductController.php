@@ -6,18 +6,14 @@ use shop\models\Product;
 
 class ProductController extends BaseController
 {
-    public $limitNum;
-
-    public function allAction($limitNum)
+    public function allAction()
     {
-        $this->limitNum = $limitNum;
-
         $productModel = new Product();
 
         $this->render(
             'product/all',
             array(
-                'products' => $productModel->getProducts($this->limitNum),
+                'products' => $productModel->getProducts(),
             )
         );
     }
