@@ -1,6 +1,7 @@
 <?php
+namespace shop\models;
 
-require_once 'db/Db.php';
+use shop\db\Db;
 
 class Category
 {

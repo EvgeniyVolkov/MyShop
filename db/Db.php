@@ -1,6 +1,8 @@
 <?php
+namespace shop\db;
 
 require_once 'config.php';
+use PDO;
 
 // PATTER SINGLETON
 class Db

@@ -1,4 +1,5 @@
 <?php
+namespace shop\controllers;
 
 class BaseController
 {

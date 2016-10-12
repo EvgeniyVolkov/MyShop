@@ -1,6 +1,5 @@
 <?php
-
-require_once 'BaseController.php';
+namespace shop\controllers;
 
 class IndexController extends BaseController
 {

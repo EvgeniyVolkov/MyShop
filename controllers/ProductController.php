@@ -1,6 +1,8 @@
 <?php
-require_once 'BaseController.php';
-require_once 'models/Product.php';
+//require_once 'BaseController.php';
+//require_once 'models/Product.php';
+namespace shop\controllers;
+use shop\models\Product;
 
 class ProductController extends BaseController
 {

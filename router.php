@@ -1,4 +1,5 @@
 <?php
+namespace shop;
 
 class Router
 {
@@ -9,7 +10,6 @@ class Router
     public static function start()
     {
         $request = isset($_GET['r']) ? $_GET['r'] : null; // r=category/all
-        $limitNum = isset($_GET['limit']) ? $_GET['limit'] : null;; // limit
 
         $controller = self::DEFAULT_CONTROLLER;
         $action = self::DEFAULT_ACTION;
@@ -26,11 +26,11 @@ class Router
         if (file_exists($fileControllerPath)) { // true
             include $fileControllerPath;
 
+            $controllerName = 'shop\controllers\\' . $controllerName;
             $controllerInstance = new $controllerName; // new CategoryController();
             $actionName = $action . 'Action'; // allAction
-
             if (method_exists($controllerInstance, $actionName)) {
-                $controllerInstance->{$actionName}($limitNum); // $controllerInstance->allAction();
+                $controllerInstance->{$actionName}(); // $controllerInstance->allAction();
             } else {
                 self::renderNotFoundPage();
             }
