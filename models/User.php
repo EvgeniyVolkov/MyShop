@@ -1,14 +1,22 @@
 <?php
 
-// require_once 'db/Db.php';
 namespace shop\models;
-use shop\db\Db;
 
-class User
+class User extends BaseModel
 {
     public function getUsers()
     {
-        //$sql = "SELECT id, title FROM product";
-        //return Db::getConnection()->query($sql)->fetchAll();
+
+    }
+
+    public function saveUser(array $userData)
+    {
+        return $this->insert('user', $userData);
+    }
+
+    public function getUserByEmail($email)
+    {
+        $sql = "SELECT * FROM `user` where email  = '{$email}'";
+        return $this->fetchOne($sql);
     }
 }

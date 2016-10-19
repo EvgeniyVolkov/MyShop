@@ -8,7 +8,7 @@ class Product
 {
     public function getProducts($limitNum)
     {
-        if($limitNum != null){
+        if ($limitNum != null) {
             $sql = "SELECT id, title FROM product LIMIT {$limitNum}";
         } else {
             $sql = "SELECT id, title FROM product";

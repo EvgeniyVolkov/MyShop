@@ -12,7 +12,7 @@ class ProductController extends BaseController
     {
         $this->limit = null;
 
-        if(isset($_GET['limit']) && $_GET['limit'] != '') {
+        if (isset($_GET['limit']) && $_GET['limit'] != '') {
             $this->limit = $_GET['limit'];
         }
 

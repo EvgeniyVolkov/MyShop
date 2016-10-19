@@ -21,4 +21,9 @@ class BaseController
         $content = ob_get_clean();
         include 'views/template/' . self::MAIN_TEMPLATE;
     }
+
+    protected function getValue($key, $array)
+    {
+        return isset($array[$key]) ? $array[$key] : '';
+    }
 }
