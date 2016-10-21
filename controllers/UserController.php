@@ -2,7 +2,6 @@
 
 namespace shop\controllers;
 
-
 use shop\models\User;
 use shop\services\SessionService;
 use shop\services\UserService;
@@ -99,18 +98,22 @@ class UserController extends BaseController
 
     public function indexAction()
     {
-        echo 'Текущий юзер: ' . SessionService::getInstance()->getValue('login');
+        echo SessionService::getInstance()->getValue('login') ? 'Текущий юзер: ' . SessionService::getInstance()->getValue('login') : 'Вы не авторизовались!';
     }
 
     public function profileAction()
     {
-        $name = $this->getValue('name', $_POST);
-        $lastname = $this->getValue('lastname', $_POST);
-        $email = $this->getValue('email', $_POST);
-        if (UserService::login($email)) {
-            echo 'Данные пользователя: ' . $email . ', ' . $name . ', ' . $lastname;
+        $email = SessionService::getInstance()->getValue('login'); // получаем e-mail из сессии
+        $userModel = new User();
+        $user = $userModel->getUserByEmail($email); // получаем массив со всеми данными конкретного юзера
+//        echo '<pre>';
+//        print_r($user);exit;
+        $name = $user['name'];
+        $lastname = $user['lastname'];
+        if ($email) {
+            echo 'Привет, ' . $name . ' ' . $lastname . '! Твой e-mail: ' . $email . '.';
         } else {
-            header('location: index.php');
+            header('location: index.php?r=user/login');
         }
     }
 
@@ -131,7 +134,7 @@ class UserController extends BaseController
     protected function isValidLastname($lastname)
     {
         $lastnameLength = strlen($lastname);
-        if ($lastnameLength < 3 || $lastnameLength > 50) {
+        if ($lastnameLength < 2 || $lastnameLength > 50) {
             return false;
         }
 

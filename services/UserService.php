@@ -1,7 +1,6 @@
 <?php
 namespace shop\services;
 
-
 class UserService
 {
     const AUTH_KEY = 'login';

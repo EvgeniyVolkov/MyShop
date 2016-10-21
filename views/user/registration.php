@@ -1,4 +1,5 @@
 <div>
+    <p style="color: green">Пожалуйста, зарегистрируйтесь:</p>
     <form action="" method="POST">
         Name: <br />
         <input type="text" name="name" />

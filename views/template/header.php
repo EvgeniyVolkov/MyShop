@@ -1,5 +1,5 @@
 <header>
-    <h1>My shop</h1>
+    <h1>My MEGA-shop!</h1>
 </header>
 <?php if (!\shop\services\UserService::isGuest()): ?>
     <a href="index.php?r=user/logout">Logout</a>

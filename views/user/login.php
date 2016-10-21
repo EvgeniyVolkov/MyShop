@@ -1,4 +1,5 @@
 <div>
+    <p style="color: green">Пожалуйста, авторизуйтесь:</p>
     <form action="" method="POST">
         Email: <br />
         <input type="email" name="email" />

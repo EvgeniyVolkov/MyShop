@@ -16,7 +16,7 @@ class User extends BaseModel
 
     public function getUserByEmail($email)
     {
-        $sql = "SELECT * FROM `user` where email  = '{$email}'";
+        $sql = "SELECT * FROM `user` WHERE `email` = '{$email}'";
         return $this->fetchOne($sql);
     }
 }

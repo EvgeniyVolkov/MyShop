@@ -9,11 +9,11 @@ class IndexController extends BaseController
     {
         $session = SessionService::getInstance();
         $login = $session->getValue('login');
-        if (isset($login)) {
+        if ($login) {
             echo 'Привет, ' . $login;
-        } else {
-            $session->setValue('login', 'bogdan');
-        }
+        } // else {
+//            $session->setValue('login', 'Evgeniy');
+//        }
 
         $this->render('index/index');
     }
